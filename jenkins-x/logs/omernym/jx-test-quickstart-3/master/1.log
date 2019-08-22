@@ -8,3 +8,33 @@ Step: step-working-dir-initializer-wbpxb:
 {"level":"info","ts":1566474703.8572729,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
 Step: step-place-tools:
 
+Step: step-git-source-meta-*******-**-test-quickstart-t4rkq:
+
+{"level":"warn","ts":1566474789.9535608,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1566474790.1144679,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/**-test-quickstart-3.git @ 7b2a9ede3be96b12b9e2fbdc3e31bdd16fb480d3 in path /workspace/source"}
+Step: step-git-merge:
+
+{"level":"info","msg":"Using SHAs from PULL_REFS=master:7b2a9ede3be96b12b9e2fbdc3e31bdd16fb480d3","time":"2019-08-22T11:53:10Z"}
+{"level":"warning","msg":"no SHAs to merge, falling back to initial cloned commit","time":"2019-08-22T11:53:10Z"}
+Step: step-merge-pull-refs:
+
+SKIP merge-pull-refs: Nothing to merge
+Step: step-create-effective-pipeline:
+
+{"level":"info","msg":"Deleting and cloning the Jenkins X versions repo","time":"2019-08-22T11:53:10Z"}
+{"level":"info","msg":"Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions","time":"2019-08-22T11:53:10Z"}
+{"level":"info","msg":"Effective pipeline written to jenkins-x-effective.yml","time":"2019-08-22T11:53:12Z"}
+Step: step-create-tekton-crds:
+
+{"level":"info","msg":"running command: echo \\$(**-release-version) \u003e VERSION","time":"2019-08-22T11:53:13Z"}
+{"level":"info","msg":"","time":"2019-08-22T11:53:13Z"}
+{"level":"info","msg":"running command: ** step tag --version \\$(cat VERSION)","time":"2019-08-22T11:53:13Z"}
+{"level":"info","msg":"Updating chart version in charts/**-test-quickstart-3/Chart.yaml to 0.0.4","time":"2019-08-22T11:53:13Z"}
+{"level":"info","msg":"Updating repository in charts/**-test-quickstart-3/values.yaml to 733373435183.dkr.ecr.us-east-1.amazonaws.com/*******/**-test-quickstart-3","time":"2019-08-22T11:53:13Z"}
+{"level":"info","msg":"Updating tag in charts/**-test-quickstart-3/values.yaml to 0.0.4","time":"2019-08-22T11:53:13Z"}
+{"level":"info","msg":"Tag v0.0.4 created and pushed to remote origin","time":"2019-08-22T11:53:15Z"}
+{"level":"info","msg":"","time":"2019-08-22T11:53:15Z"}
+{"level":"warning","msg":"failed to find secret kaniko-secret in namespace **: secrets \"kaniko-secret\" not found","time":"2019-08-22T11:53:15Z"}
+{"level":"info","msg":"PipelineActivity for *******-**-test-quickstart-3-master-1","time":"2019-08-22T11:53:15Z"}
+{"level":"info","msg":"Applying changes ","time":"2019-08-22T11:53:15Z"}
+error: failed to apply Tekton CRDs: failed to create/update PipelineResource *******-**-test-quickstart-3-ma in namespace **: failed to update PipelineResource *******-**-test-quickstart-3-ma: Timeout: request did not complete within requested timeout 30s
